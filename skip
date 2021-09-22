@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+commits=$(git log --no-merges | grep "commit" | sed 's/commit //g' | sed 's/(.*//')
+#echo "$commits"
+
+while read -r line;
+do
+	if [[ $(git rev-parse HEAD) == "$line" ]]; then
+		git bisect skip
+	fi
+done <<< "$commits"

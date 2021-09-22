@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+./skip
+
+if ! grep -q nightmare 'test.txt'
+then
+	echo "test passed"
+	exit 0
+fi
+echo "test failed"
+exit 1
