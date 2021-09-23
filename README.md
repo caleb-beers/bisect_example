@@ -17,7 +17,7 @@ git commit -m "Some message"
 This creates a commit based on our staged changes. The -m indicates that a message will be attached to this commit, and that message will be whatever is in between the following quotation marks.
 
 sed -i -e 's/boat/car/g' test.txt
-sed stands for "Stream EDit." This line uses regular expressions [LINK TO REGEX VIDEO] to replace every instance of 'boat' with 'car' in test.txt. The s/ means that a replacement is going on, boat is the word being targeted, car is what replaces the target word (more properly, pattern). The /g flag at the end stands for "global" so that every occurence of 'boat' will be replaced with 'car' and not just the first one. 
+sed stands for "Stream EDit." This line uses regular expressions [LINK TO REGEX VIDEO] to substitute every instance of 'boat' with 'car' in test.txt. The s/ means that a substitution is going on, boat is the word being targeted, car is what is substituted for the target word (more properly, pattern). The /g flag at the end stands for "global" so that every occurence of 'boat' will be substituted with 'car' and not just the first one. 
 
 ## bisect-01
 
