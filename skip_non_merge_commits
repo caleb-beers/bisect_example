@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 non_merge_commits=$(git log --no-merges | grep "commit" | sed 's/commit //g' | sed 's/(.*//')
-
 current_commit=$(git rev-parse HEAD)
 
 while read -r non_merge_commit;

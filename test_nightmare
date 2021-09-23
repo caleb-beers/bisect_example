@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-./skip
+./skip_non_merge_commits
 
 if ! grep -q nightmare 'test.txt'
 then
