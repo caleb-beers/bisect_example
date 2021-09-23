@@ -30,13 +30,13 @@ Life is but a dream."
 
 Now you know.
 
-1. Run the ./bisect-01 script
+1. Run the ./bisect-01 script. You can accomplish this by cd-ing into the project folder from terminal and typing ./bisect-01. 
 
-2. git log
+2. Type "git log" in your terminal and scroll up. You'll notice a series of messages that read like this: "Commit 1", "Commit 2", "Commit 3", etc. Those are the messages that were added since we used git commit -m "message" to add messages to each commit. You'll also see an author (usually your username) and a date on which the commit was made.
 
-3. Find the SHA value for the commit labeled "Commit 1"
+3.  Most importantly, you'll see a SHA value. SHA stands for Secure Hash Algorithm, and that's all you need to know about it right now. Each commit has a unique SHA value. Find the SHA value for the commit labeled "Commit 1".
 
-4. git bisect start HEAD <SHA Value from Step 3>
+4. Run this command in your terminal, without quotes: "git bisect start HEAD <SHA Value from Step 3>"
 
 5. Then, you can manually look at the contents of test.txt, using 'git bisect good' and 'git bisect bad' as necessary to indicate which commits are good or bad.
 
