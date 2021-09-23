@@ -2,13 +2,33 @@
 
 ## Before Starting:
 
-Before starting, review the files in this repository and understand what they are all doing.
+Before we begin section one, take a look at the file bisect-01. This is a shell script. [LINK TO SHELL SCRIPT VIDEO] You can run it and it will do things for you. Read it line by line. Here's the gist of what each line is doing:
+
+echo word > file
+The echo command prints something. The inequality sign there assigns the output of echo to a file. So if we write "echo xyz > file.txt" then "xyz" will be written to file.txt. If you go and open file.txt, you'll see xyz written there because of the echo command. You should try this in the terminal.
+
+git add file
+This is a git [LINK TO GIT VIDEO] command that adds a file to the staging area.
+
+&&
+The double ampersand here allows us to execute multiple commands. Try this in your terminal: echo "What's " && echo "up?" 
+
+git commit -m "Some message"
+This creates a commit based on our staged changes. The -m indicates that a message will be attached to this commit, and that message will be whatever is in between the following quotation marks.
+
+sed -i -e 's/boat/car/g' test.txt
+sed stands for "Stream EDit." This line uses regular expressions [LINK TO REGEX VIDEO] to replace every instance of 'boat' with 'car' in test.txt. The s/ means that a replacement is going on, boat is the word being targeted, car is what replaces the target word (more properly, pattern). The /g flag at the end stands for "global" so that every occurence of 'boat' will be replaced with 'car' and not just the first one. 
 
 ## bisect-01
 
-This is the setup for the first bisect tutorial. What you'll want to do here is to
+0. To understand this example, you will need to know the words to the song, "Row, row, row your boat." If you don't know the words already, it goes like this:
 
-0. Learn the words to the song, "Row, Row, Row your boat"
+"Row, row, row your boat
+Gently down the stream
+Merrily, merrily, merrily, merrily
+Life is but a dream."
+
+Now you know.
 
 1. Run the ./bisect-01 script
 
