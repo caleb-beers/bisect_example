@@ -36,13 +36,13 @@ Now you know.
 
 3.  Most importantly, you'll see a SHA value. SHA stands for Secure Hash Algorithm, and that's all you need to know about it right now. Each commit has a unique SHA value. Find the SHA value for the commit labeled "Commit 1".
 
-4. Run this command in your terminal, without quotes: "git bisect start HEAD <SHA Value from Step 3>"
+4. Run this command in your terminal, without quotes: "git bisect start HEAD <SHA Value from Step 3>". This need not include the whole SHA value, only the first five characters.
 
-5. Then, you can manually look at the contents of test.txt, using 'git bisect good' and 'git bisect bad' as necessary to indicate which commits are good or bad.
+5. Now git bisect will take you through the commit history that you've specified until you find the most recent commit without the bug. For each commit, you can type "git show <first five chars of SHA>:<filename>" in order to see the text of the file so you can check if it still has the bad code. If it does, type "git bisect bad". If not, type "git bisect good".
 
-6. git bisect reset
+6. If you want to abort this process, then at any point you can type "git bisect reset". 
 
-7. Once you have done all the previous steps, you can revert the commit identified to be bad: git revert <commit identified as bad>
+7. Once you have done all the previous steps, you can revert the commit identified to be bad: git revert <commit identified as bad>. 
 
 8. Continue to Part II where the tests are automated.
 
