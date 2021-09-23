@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-commits=$(git log --no-merges | grep "commit" | sed 's/commit //g' | sed 's/(.*//')
-#echo "$commits"
+non_merge_commits=$(git log --no-merges | grep "commit" | sed 's/commit //g' | sed 's/(.*//')
 
-while read -r line;
+current_commit=$(git rev-parse HEAD)
+
+while read -r non_merge_commit;
 do
-	if [[ $(git rev-parse HEAD) == "$line" ]]; then
+	if [[ "$current_commit" == "$non_merge_commit" ]]; then
 		git bisect skip
 	fi
-done <<< "$commits"
+done <<< "$non_merge_commits"
