@@ -22,7 +22,7 @@ This is the setup for the first bisect tutorial. What you'll want to do here is 
 
 6. git bisect reset
 
-7. Once you have done all the previous steps, you can revert the commit identified to be bad: git revert <bad commit>
+7. Once you have done all the previous steps, you can revert the commit identified to be bad: git revert <commit identified as bad>
 
 8. Continue to Part II where the tests are automated.
 
