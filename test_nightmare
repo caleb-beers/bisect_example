@@ -2,7 +2,9 @@
 
 ./skip_non_merge_commits
 
-if ! grep -q nightmare 'test.txt'
+nightmare_in_test=$(! grep -q nightmare 'test.txt')
+
+if nightmare_in_test
 then
 	echo "test passed"
 	exit 0
